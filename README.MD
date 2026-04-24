@@ -17,13 +17,20 @@
 ### MongoDB: Must be configured as a Replica Set to support transactions.
 
 # 📦 Setup & Installation
-## 1. MongoDB Configuration (Linux/Crostini)
+## 1. MongoDB Configuration
 > Since this project uses multi-document transactions, you must convert your standalone MongoDB instance into a single-node Replica Set:
 >
 ### Edit Config:
+### Linux
 #### Bash:
-    > sudo nano /etc/mongod.conf
-    >
+```
+    sudo nano /etc/mongod.conf
+```
+### Windows:
+> Open in notepad in admin mode
+```
+    C:\Program Files\MongoDB\Server\<version>\bin\mongod.cfg
+```
 ### Add Replication: Uncomment the replication section and add a name:
 #### YAML:
 ```
@@ -31,9 +38,16 @@ replication:
     replSetName: "rs0"
 ```
 ### Restart & Initialize:
+#### Linux
 #### Bash
 ```
     sudo systemctl restart mongod
+    mongosh --eval "rs.initiate()"
+```
+#### Windows
+> Open services.msc, find MongoDB Server, and select restart
+#### Powershell
+```
     mongosh --eval "rs.initiate()"
 ```
 ## 2. Backend Setup
@@ -43,12 +57,17 @@ replication:
     git clone https://github.com/lukeperras15-alt/fencing-company-api.git
 ```
 ### Install dependencies:
-#### Bash
+
+#### Linux
 ```
     npm install express mongodb
 ```
+#### Windows
+```
+    npm install
+```
 ### Start the server:
-#### Bash
+#### Terminal
 ```
     node server.js
 ```
