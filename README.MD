@@ -1,6 +1,6 @@
 # Fencing Company Management API
-A robust RESTful API and database backend built with Node.js, Express, and MongoDB. This project manages customer orders, product catalogs, and physical inventory for a specialized fencing construction company.
-
+> A robust RESTful API and database backend built with Node.js, Express, and MongoDB. This project manages customer orders, product catalogs, and physical inventory for a specialized fencing construction company.
+>
 ## 🚀 Features
 ### RESTful CRUD: Complete endpoints for Creating, Reading, Updating, and Deleting orders.
 ### ACID Transactions: Ensures data integrity by deducting inventory only when an order is successfully placed. If stock is insufficient, the order is automatically rolled back.
@@ -12,7 +12,8 @@ A robust RESTful API and database backend built with Node.js, Express, and Mongo
 
 # 📦 Setup & Installation
 ## 1. MongoDB Configuration (Linux/Crostini)
-Since this project uses multi-document transactions, you must convert your standalone MongoDB instance into a single-node Replica Set:
+> Since this project uses multi-document transactions, you must convert your standalone MongoDB instance into a single-node Replica Set:
+>
 ### Edit Config:
 Bash:
     sudo nano /etc/mongod.conf
